@@ -61,6 +61,4 @@ public class RobotTest {
         int actual = ((Robot) firstRobot).robotCount();
         assertEquals("Test failed", robotCount, actual);
     }
-
-
 }
