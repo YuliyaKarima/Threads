@@ -5,12 +5,12 @@ import java.util.Random;
 /**
  * Class produces new Robot elements in separate thread
  */
-public class DetailsProducer implements Runnable {
+public class DetailsSupplier implements Runnable {
     private Random random = new Random(4);
     private DetailsStore store;
     private int limit;
 
-    public DetailsProducer(DetailsStore store, int limit) {
+    public DetailsSupplier(DetailsStore store, int limit) {
         this.limit = limit;
         this.store = store;
     }

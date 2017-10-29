@@ -38,10 +38,6 @@ public class RobotTest {
     }
 
     @Test
-    public void run() throws Exception {
-    }
-
-    @Test
     public void twoRobotsMustTogetherCountCertainRobotNumber() throws Exception {
         //given
         //when
@@ -52,7 +48,19 @@ public class RobotTest {
         //than
         int firstActual = ((Robot) firstRobot).robotCount();
         int secondActual = ((Robot) secondRobot).robotCount();
-        assertEquals("Test failed", robotCount, firstActual+secondActual);
+        assertEquals("Test failed", robotCount, firstActual + secondActual);
     }
+
+    @Test
+    public void RobotsMustCountCertainRobotNumber() throws Exception {
+        //given
+        //when
+        robotOneThread.start();
+        robotOneThread.join();
+        //than
+        int actual = ((Robot) firstRobot).robotCount();
+        assertEquals("Test failed", robotCount, actual);
+    }
+
 
 }

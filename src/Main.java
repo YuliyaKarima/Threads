@@ -1,4 +1,4 @@
-import factory.DetailsProducer;
+import factory.DetailsSupplier;
 import factory.RobotDetailsFactory;
 import factory.DetailsStore;
 import robot.Robot;
@@ -17,7 +17,7 @@ public class Main {
         Runnable thisdRobot = new Robot(RobotDetailsFactory.getRoboLeg(), RobotDetailsFactory.getRoboLeg(),
                 RobotDetailsFactory.getRobotHead(), RobotDetailsFactory.getRobotBody(),
                 RobotDetailsFactory.getRobotHand(), RobotDetailsFactory.getRobotHand(), store);
-        Runnable factory = new DetailsProducer(store, 140);
+        Runnable factory = new DetailsSupplier(store, 140);
 
         Thread robotOne = new Thread(firstRobot, "First Robot");
         Thread robotTwo = new Thread(secondRobot, "Second Robot");
